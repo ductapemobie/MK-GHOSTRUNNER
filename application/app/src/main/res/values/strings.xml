@@ -1,6 +1,37 @@
 <resources>
     <string name="app_name">MK GHOSTRUNNER</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_run">Run</string>
+    <string name="title_food">Food</string>
+
+    <string name="home_welcome">Welcome to MK GHOSTRUNNER</string>
+    <string name="home_welcome_user">[USER]</string>
+    <string name="home_date">View Previous Date</string>
+    <string name="home_date_btn">Select Date</string>
+    <string name="home_daily_values">Today</string>
+    <string name="home_daily_dist">Distance Ran:</string>
+    <string name="home_daily_dist_val">[VALUE]</string>
+    <string name="home_daily_cal">Calories Consumed:</string>
+    <string name="home_daily_cal_val">[VALUE]</string>
+
+    <string name="run_dist">Distance:</string>
+    <string name="run_dist_val">[VALUE]</string>
+    <string name="run_time">Time:</string>
+    <string name="run_time_val">[VALUE]</string>
+    <string name="run_speed">Average Speed:</string>
+    <string name="run_speed_val">[VALUE]</string>
+    <string name="run_start_btn">START RUN</string>
+
+    <string name="food_daily_totals">Daily Totals</string>
+    <string name="food_cal">Calories:</string>
+    <string name="food_cal_val">[VALUE]</string>
+    <string name="food_carb">Carbs:</string>
+    <string name="food_carb_val">[VALUE]</string>
+    <string name="food_protein">Protein:</string>
+    <string name="food_protein_val">[VALUE]</string>
+    <string name="food_fat">Fat:</string>
+    <string name="food_fat_val">[VALUE]</string>
+    <string name="food_new_btn">Add New Food</string>
+    <string name="food_options">Options</string>
+    <string name="food_view_btn">View Today\'s Food</string>
 </resources>
