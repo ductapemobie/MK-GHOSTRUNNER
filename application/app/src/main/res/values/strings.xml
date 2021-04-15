@@ -3,7 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_run">Run</string>
     <string name="title_food">Food</string>
-
+    <string name="title_login">Log In</string>
+    <!-- Strings related to home fragment -->
     <string name="home_welcome">Welcome to MK GHOSTRUNNER</string>
     <string name="home_welcome_user">[USER]</string>
     <string name="home_date">View Previous Date</string>
@@ -13,7 +14,8 @@
     <string name="home_daily_dist_val">[VALUE]</string>
     <string name="home_daily_cal">Calories Consumed:</string>
     <string name="home_daily_cal_val">[VALUE]</string>
-
+    <string name="home_logout">Log Out</string>
+    <!-- Strings related to run fragment -->
     <string name="run_dist">Distance:</string>
     <string name="run_dist_val">[VALUE]</string>
     <string name="run_time">Time:</string>
@@ -21,7 +23,7 @@
     <string name="run_speed">Average Speed:</string>
     <string name="run_speed_val">[VALUE]</string>
     <string name="run_start_btn">START RUN</string>
-
+    <!-- Strings related to food fragment -->
     <string name="food_daily_totals">Daily Totals</string>
     <string name="food_cal">Calories:</string>
     <string name="food_cal_val">[VALUE]</string>
@@ -34,4 +36,9 @@
     <string name="food_new_btn">Add New Food</string>
     <string name="food_options">Options</string>
     <string name="food_view_btn">View Today\'s Food</string>
+    <!-- Strings related to login -->
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_register">Register</string>
+    <string name="login_login">Log In</string>
 </resources>

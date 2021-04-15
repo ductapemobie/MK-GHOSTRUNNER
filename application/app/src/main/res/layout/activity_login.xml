@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TableLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:id="@+id/login_title"
+                android:gravity="center_horizontal"
+                android:layout_span="2"
+                android:text="@string/title_login"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/login_username_prompt"
+                android:text="@string/login_username"/>
+            <EditText
+                android:hint="@string/login_username"
+                android:autofillHints="@string/login_username"
+                android:inputType="text"
+                android:gravity="center_horizontal"
+                android:id="@+id/login_username_input"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/login_password_prompt"
+                android:text="@string/login_password"/>
+            <EditText
+                android:hint="@string/login_password"
+                android:autofillHints="@string/login_password"
+                android:inputType="textPassword"
+                android:gravity="center_horizontal"
+                android:id="@+id/login_password_input"/>
+        </TableRow>
+        <TableRow>
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:onClick="login_click"
+                android:text="@string/login_login" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:onClick="register_click"
+                android:text="@string/login_register" />
+        </TableRow>
+
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
