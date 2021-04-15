@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mkghostrunner.R;
 import com.example.mkghostrunner.LoginActivity;
+import com.example.mkghostrunner.ViewDayActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -24,10 +25,17 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final Button button = root.findViewById(R.id.home_logout_btn);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button logout_button = root.findViewById(R.id.home_logout_btn);
+        logout_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                getActivity().finish();
+            }
+        });
+
+        final Button view_button = root.findViewById(R.id.home_date_input);
+        view_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ViewDayActivity.class);
                 startActivity(intent);
             }
         });
