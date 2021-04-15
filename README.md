@@ -1,4 +1,3 @@
 # MK-GHOSTRUNNER
 
-first thing to-do
-make a base app to build off of and stuff
+Base UI of the home run and food views is done, still need to add all functionality as well as make a login view and another food view
