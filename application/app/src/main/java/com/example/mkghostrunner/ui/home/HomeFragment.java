@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mkghostrunner.R;
-import com.example.mkghostrunner.LoginActivity;
+import com.example.mkghostrunner.RunningActivity;
 import com.example.mkghostrunner.ViewDayActivity;
 
 public class HomeFragment extends Fragment {

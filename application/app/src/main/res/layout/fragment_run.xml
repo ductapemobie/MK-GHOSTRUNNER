@@ -102,6 +102,18 @@
                 android:textStyle="bold" />
         </TableRow>
 
+        <TableRow android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/run_coords"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_span="2"
+                android:text="@string/run_dist_val"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </TableRow>
+
     </TableLayout>
 
 
