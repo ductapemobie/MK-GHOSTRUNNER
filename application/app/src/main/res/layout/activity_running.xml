@@ -12,13 +12,40 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity" >
 
-        <TextView
-            android:id="@+id/running_dist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/title_home" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="0">
+            <TableRow>
+                <TextView
+                    android:id="@+id/running_dist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="@string/run_speed_val" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/running_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="@string/run_speed_val" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/running_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="@string/run_speed_val" />
+            </TableRow>
+
+        </TableLayout>
+
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

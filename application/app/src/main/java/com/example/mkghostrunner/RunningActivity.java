@@ -10,21 +10,26 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.TextView;
 
 public class RunningActivity extends Activity implements LocationListener {
     protected LocationManager locationManager;
-    TextView txtDist;
+    TextView distTxt, timeTxt;
     float distanceTraveled;
     Location oldLoc;
+    long startTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running);
         oldLoc = null;
-        txtDist = (TextView) findViewById(R.id.running_dist);
+        startTime = SystemClock.uptimeMillis();
+
+        distTxt = findViewById(R.id.running_dist);
+        timeTxt = findViewById(R.id.running_time);
 
         distanceTraveled = 0;
 
@@ -43,13 +48,14 @@ public class RunningActivity extends Activity implements LocationListener {
     }
     @Override
     public void onLocationChanged(Location location) {
+        long timePassed = SystemClock.uptimeMillis() - startTime;
         if (oldLoc != null){
             distanceTraveled += location.distanceTo(oldLoc);
         }
-        txtDist = (TextView) findViewById(R.id.running_dist);
-        txtDist.setText(String.valueOf(distanceTraveled));
+        distTxt = (TextView) findViewById(R.id.running_dist);
+        distTxt.setText(String.valueOf(distanceTraveled));
+        timeTxt.setText(String.valueOf(timePassed));
         oldLoc = location;
-
     }
 
     @Override
