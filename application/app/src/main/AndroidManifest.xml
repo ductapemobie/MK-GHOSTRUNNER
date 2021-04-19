@@ -13,13 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MKGHOSTRUNNER">
-        <activity android:name=".ViewDayActivity" />
-        <activity android:name=".ViewFoodActivity" />
-        <activity android:name=".RunningActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".RunActivity"></activity>
+        <activity android:name=".FoodActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewDayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewFoodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RunningActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

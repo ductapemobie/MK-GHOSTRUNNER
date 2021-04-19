@@ -20,9 +20,23 @@
     <string name="run_dist_val">[VALUE]</string>
     <string name="run_time">Time:</string>
     <string name="run_time_val">[VALUE]</string>
-    <string name="run_speed">Average Speed:</string>
+    <string name="run_speed">Average Speed (m/s):</string>
     <string name="run_speed_val">[VALUE]</string>
+    <string name="run_speed_mph">Average Speed (mph):</string>
+    <string name="run_speed_mph_val">[VALUE]</string>
     <string name="run_start_btn">START RUN</string>
+    <!-- Strings related to running activity -->
+    <string name="running_title">Run Started!</string>
+    <string name="running_dist">Meters Traveled:</string>
+    <string name="running_time">Time Elapsed:</string>
+    <string name="running_speed">Average Speed (m/s):</string>
+    <string name="running_speed_mph">Average Speed (mph):</string>
+    <string name="running_dist_val">[VALUE]</string>
+    <string name="running_time_val">[VALUE]</string>
+    <string name="running_speed_val">[VALUE]</string>
+    <string name="running_speed_mph_val">[VALUE]</string>
+    <string name="running_btn">Finish Run</string>
+    <string name="running_cancel_btn">Cancel Run</string>
     <!-- Strings related to food fragment -->
     <string name="food_daily_totals">Daily Totals</string>
     <string name="food_cal">Calories:</string>
@@ -41,4 +55,7 @@
     <string name="login_password">Password</string>
     <string name="login_register">Register</string>
     <string name="login_login">Log In</string>
+    <string name="login_taken">Username Already Taken</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
