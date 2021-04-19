@@ -89,6 +89,27 @@
                 android:paddingRight="0dp"
                 android:text="@string/run_speed_val" />
         </TableRow>
+        <TableRow android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/run_speed_mph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_speed_mph" />
+
+            <TextView
+                android:id="@+id/run_speed_mph_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_speed_mph_val" />
+        </TableRow>
 
         <TableRow android:layout_marginTop="20dp">
             <Button
@@ -98,18 +119,6 @@
                 android:layout_span="2"
                 android:text="@string/run_start_btn"
                 android:textColor="#FFF"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow android:layout_marginTop="20dp">
-            <TextView
-                android:id="@+id/run_coords"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_span="2"
-                android:text="@string/run_dist_val"
-                android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </TableRow>

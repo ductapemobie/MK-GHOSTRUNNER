@@ -6,42 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".RunningActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity" >
 
         <TableLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:stretchColumns="0">
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true">
             <TableRow>
                 <TextView
+                    android:id="@+id/running_headder"
+                    android:layout_span="2"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:paddingBottom="40dp"
+                    android:text="@string/running_title" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
                     android:id="@+id/running_dist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="30sp"
-                    android:text="@string/run_speed_val" />
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_dist" />
+                <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
+                    android:id="@+id/running_dist_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_dist_val" />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
                     android:id="@+id/running_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="30sp"
-                    android:text="@string/run_speed_val" />
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_time" />
+                <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
+                    android:id="@+id/running_time_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_time_val" />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
                     android:id="@+id/running_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="30sp"
-                    android:text="@string/run_speed_val" />
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_speed" />
+                <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
+                    android:id="@+id/running_speed_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_speed_val" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
+                    android:id="@+id/running_speed_mph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_speed_mph" />
+                <TextView
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
+                    android:id="@+id/running_speed_mph_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="24sp"
+                    android:text="@string/running_speed_mph_val" />
+            </TableRow>
+            <TableRow android:paddingTop="40dp">
+                <Button
+                    android:id="@+id/running_finish_btn"
+                    android:layout_span="2"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/running_btn"/>
+            </TableRow>
+            <TableRow android:paddingTop="40dp">
+                <Button
+                    android:id="@+id/running_cancel_btn"
+                    android:layout_span="2"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/running_cancel_btn"/>
             </TableRow>
 
         </TableLayout>
