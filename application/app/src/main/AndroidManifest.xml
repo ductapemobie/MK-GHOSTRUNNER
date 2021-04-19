@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mkghostrunner">
+    package="com.example.mkghostrunner" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -12,14 +12,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MKGHOSTRUNNER">
-        <activity android:name=".ViewDayActivity" />
-        <activity android:name=".ViewFoodActivity" />
-        <activity android:name=".RunningActivity" />
-        <activity android:name=".MainActivity" />
+        android:theme="@style/Theme.MKGHOSTRUNNER" >
+        <activity android:name=".HomeActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity android:name=".ViewDayActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ViewFoodActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".RunningActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

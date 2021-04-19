@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.mkghostrunner.ui.dashboard.RunFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.getResult().getValue()==null)
                         register_user(username, password);
                     else
-                        loginTxt.setText("Username Already Taken");
+                        loginTxt.setText(String.valueOf("Username Already Taken"));
                 }
             }
         });
@@ -75,13 +76,13 @@ public class LoginActivity extends AppCompatActivity {
         UserData newUser = new UserData(username, password, key);
         mDatabase.child("users").child(key).setValue(newUser);
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra(Intent.EXTRA_TEXT, key);
         startActivity(intent);
     }
 
     public void login_click(View v){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 }
