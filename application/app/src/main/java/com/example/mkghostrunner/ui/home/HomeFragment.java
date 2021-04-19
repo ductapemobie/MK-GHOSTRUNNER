@@ -26,6 +26,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         final Button logout_button = root.findViewById(R.id.home_logout_btn);
+
         logout_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 getActivity().finish();

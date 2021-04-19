@@ -15,16 +15,16 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.mkghostrunner.R;
 import com.example.mkghostrunner.RunningActivity;
 
-public class DashboardFragment extends Fragment{
+public class RunFragment extends Fragment{
     private static final int RUNNING_ACTIVITY_REQUEST_CODE = 0;
     TextView distTxt, timeTxt, speedTxt;
-    private DashboardViewModel dashboardViewModel;
+    private RunViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+                new ViewModelProvider(this).get(RunViewModel.class);
         View root = inflater.inflate(R.layout.fragment_run, container, false);
         distTxt = root.findViewById(R.id.run_dist_val);
         final Button run_button = root.findViewById(R.id.button_id);
