@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1085936236754",
+    "project_id": "mk-ghostrunner-e808f",
+    "storage_bucket": "mk-ghostrunner-e808f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085936236754:android:d2037253b79e9821b3950b",
+        "android_client_info": {
+          "package_name": "com.example.mkghostrunner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085936236754-7i6m2s189srlo0iitgluk25og98o1rls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYRMpB9pWGKkv2Qe8kY0a0CvEkcmXlOQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085936236754-7i6m2s189srlo0iitgluk25og98o1rls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
