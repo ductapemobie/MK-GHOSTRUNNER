@@ -21,11 +21,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class FoodActivity extends AppCompatActivity {
 
     Context context = this;
-    Button homeBtn, runBtn, foodBtn;
     TextView calTxt, carbTxt, proTxt, fatTxt;
     String username, dayKey;
     Intent loginIntent;
     DatabaseReference mDatabase;
+    Button homeBtn, runBtn, foodBtn, addFoodBtn;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,9 @@ public class FoodActivity extends AppCompatActivity {
         homeBtn = findViewById(R.id.home_home_btn);
         runBtn = findViewById(R.id.home_run_btn);
         foodBtn = findViewById(R.id.home_food_btn);
+        addFoodBtn = findViewById(R.id.food_new_btn);
+
+
         calTxt = findViewById(R.id.food_cal_val);
         carbTxt = findViewById(R.id.food_carb_val);
         proTxt = findViewById(R.id.food_protein_val);
@@ -47,6 +52,7 @@ public class FoodActivity extends AppCompatActivity {
         dayKey = vals[1];
 
         updateVals();
+
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -67,6 +73,14 @@ public class FoodActivity extends AppCompatActivity {
         foodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //do nothing, we are already here
+            }
+        });
+
+        addFoodBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AddFood.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

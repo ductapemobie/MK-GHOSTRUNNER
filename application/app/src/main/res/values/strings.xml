@@ -50,6 +50,15 @@
     <string name="food_new_btn">Add New Food</string>
     <string name="food_options">Options</string>
     <string name="food_view_btn">View Today\'s Food</string>
+    <!-- Strings related to add food -->
+    <string name="title_add_food">Add Food</string>
+    <string name="add_food_name">Food Name</string>
+    <string name="add_food_cal_amount">Calorie Amount</string>
+    <string name="add_food_carb_amount">Carbs Amount</string>
+    <string name="add_food_protein_amount">Protein Amount</string>
+    <string name="add_food_fat_amount">Total Fat Amount</string>
+    <string name="add_food_add_food">Add This Food</string>
+
     <!-- Strings related to login -->
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>

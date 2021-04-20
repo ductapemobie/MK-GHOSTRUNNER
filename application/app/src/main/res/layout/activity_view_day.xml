@@ -6,4 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".ViewDayActivity">
 
+    <TableLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_title"
+                android:gravity="center_horizontal"
+                android:layout_span="2"
+                android:textSize="30sp"
+                android:text="View Day"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_date"
+                android:textSize="16sp"
+                android:text="Date:"/>
+            <TextView
+                android:id="@+id/day_date"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_dist_ran"
+                android:textSize="16sp"
+                android:text="Distance Ran:"/>
+            <TextView
+                android:id="@+id/day_dist_ran"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_time_ran"
+                android:textSize="16sp"
+                android:text="Time Ran:"/>
+            <TextView
+                android:id="@+id/day_time_ran"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_calories"
+                android:textSize="16sp"
+                android:text="Calories:"/>
+            <TextView
+                android:id="@+id/day_calories"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_carbs"
+                android:textSize="16sp"
+                android:text="Carbs:"/>
+            <TextView
+                android:id="@+id/day_carbs"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_protein"
+                android:textSize="16sp"
+                android:text="Protein:"/>
+            <TextView
+                android:id="@+id/day_protein"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_day_fat"
+                android:textSize="16sp"
+                android:text="Fat:"/>
+            <TextView
+                android:id="@+id/day_fat"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="@string/run_time_val" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/space"
+                android:textSize="16sp"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:text=""/>
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/return_home_btn"
+                android:layout_gravity="center_horizontal"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:text= "Return Home" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/view_food_btn"
+                android:layout_gravity="center_horizontal"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:text="View Food" />
+        </TableRow>
+
+
+    </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

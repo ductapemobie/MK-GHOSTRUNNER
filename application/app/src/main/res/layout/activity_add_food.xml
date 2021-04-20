@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFood">
+
+    <TableLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:id="@+id/login_title"
+                android:gravity="center_horizontal"
+                android:layout_span="2"
+                android:textSize="30sp"
+                android:text="@string/title_add_food"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/name_prompt"
+                android:textSize="16sp"
+                android:text="@string/add_food_name"/>
+            <EditText
+                android:id="@+id/name_input"
+                android:hint="name of your food item"
+                android:autofillHints="name of your food item"
+                android:inputType="text"
+                android:gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/calorie_prompt"
+                android:textSize="16sp"
+                android:text="@string/add_food_cal_amount"/>
+            <EditText
+                android:id="@+id/calorie_input"
+                android:hint="# of calories"
+                android:autofillHints="# of calories"
+                android:inputType="text"
+                android:gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/carb_prompt"
+                android:textSize="16sp"
+                android:text="@string/add_food_carb_amount"/>
+            <EditText
+                android:id="@+id/carb_input"
+                android:hint="# of carbs"
+                android:autofillHints="# of carbs"
+                android:inputType="text"
+                android:gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/protein_prompt"
+                android:textSize="16sp"
+                android:text="@string/add_food_protein_amount"/>
+            <EditText
+                android:id="@+id/protein_input"
+                android:hint="amount of protein"
+                android:autofillHints="amount of protein"
+                android:inputType="text"
+                android:gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/fat_prompt"
+                android:textSize="16sp"
+                android:text="@string/add_food_fat_amount"/>
+            <EditText
+                android:id="@+id/fat_input"
+                android:hint="fat content of food"
+                android:autofillHints="fat content of food"
+                android:inputType="text"
+                android:gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/add_food_error_msg"
+                android:textSize="16sp"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:text=""/>
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/add_food_btn"
+                android:layout_gravity="center_horizontal"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:text="@string/add_food_add_food" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow android:gravity="center">
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/home_home_btn"
+                android:text="@string/title_home" />
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/home_run_btn"
+                android:text="@string/title_run" />
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/home_food_btn"
+                android:text="@string/title_food" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
