@@ -65,7 +65,7 @@ public class RunActivity extends AppCompatActivity {
             if (resultCode == -1){
                 String[] retVals = data.getStringExtra(Intent.EXTRA_TEXT).split(" ");
 
-                distTxt.setText("hi");
+                distTxt.setText(String.valueOf(retVals));
             }
         }
     }
