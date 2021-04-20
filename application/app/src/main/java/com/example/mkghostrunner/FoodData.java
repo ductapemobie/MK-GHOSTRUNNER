@@ -1,20 +1,19 @@
 package com.example.mkghostrunner;
 
 public class FoodData {
-    String name, dayKey, key;
+    String name, key;
     int calories, carbs, protein, fat;
     //FoodData next = null;
 
     public FoodData(){
 
     }
-    public FoodData(int calories, int carbs, int protein, int fat, String name, String dayKey, String key){
+    public FoodData(int calories, int carbs, int protein, int fat, String name, String key){
         this.calories = calories;
         this.carbs = carbs;
         this.protein = protein;
         this.fat = fat;
         this.name = name;
-        this.dayKey = dayKey;
         this.key = key;
     }
 
@@ -32,9 +31,6 @@ public class FoodData {
     }
     public int getFat(){
         return this.fat;
-    }
-    public String getDayKey(){
-        return this.dayKey;
     }
     public String getKey(){
         return this.key;
@@ -57,9 +53,6 @@ public class FoodData {
     }
     public void setFat(int fat) {
         this.fat = fat;
-    }
-    public void setDayKey(String dayKey) {
-        this.dayKey = dayKey;
     }
     public void setKey(String key) {
         this.key = key;

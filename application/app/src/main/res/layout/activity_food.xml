@@ -135,9 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_span="2"
-                android:background="#0ff"
-                android:text="@string/food_new_btn"
-                android:textSize="20sp" />
+                android:text="@string/food_new_btn" />
         </TableRow>
 
         <TableRow android:layout_marginTop="20dp">
@@ -147,9 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_span="2"
-                android:background="#0ff"
-                android:text="@string/food_view_btn"
-                android:textSize="20sp" />
+                android:text="@string/food_view_btn" />
         </TableRow>
     </TableLayout>
     <TableLayout
