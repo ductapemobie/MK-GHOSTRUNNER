@@ -84,13 +84,7 @@ public class RunActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RUNNING_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == -1){
-                String[] retVals = data.getStringExtra(Intent.EXTRA_TEXT).split(" ");
-
-                distTxt.setText(String.valueOf(retVals));
-            }
-        }
+        updateVals();
     }
 
     private void updateVals(){
@@ -119,7 +113,7 @@ public class RunActivity extends AppCompatActivity {
                         speed = 0;
                     }
                     distTxt.setText(String.valueOf(totalDist) + " meters");
-                    timeTxt.setText(String.valueOf(totalDist) + " meters");
+                    timeTxt.setText(String.valueOf(totalTime/ 60.0) + " minutes");
                     speedTxt.setText(String.valueOf(speed) + "m/s");
                     speedMphTxt.setText(String.valueOf(speed / 0.44704) + "mph");
                 }
