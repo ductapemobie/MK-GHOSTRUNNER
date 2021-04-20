@@ -11,7 +11,7 @@ import android.widget.Button;
 public class FoodActivity extends AppCompatActivity {
 
     Context context = this;
-    Button homeBtn, runBtn, foodBtn;
+    Button homeBtn, runBtn, foodBtn, addFoodBtn;
 
 
     @Override
@@ -22,6 +22,7 @@ public class FoodActivity extends AppCompatActivity {
         homeBtn = findViewById(R.id.home_home_btn);
         runBtn = findViewById(R.id.home_run_btn);
         foodBtn = findViewById(R.id.home_food_btn);
+        addFoodBtn = findViewById(R.id.food_new_btn);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -40,6 +41,14 @@ public class FoodActivity extends AppCompatActivity {
         foodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //do nothing, we are already here
+            }
+        });
+
+        addFoodBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AddFood.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
