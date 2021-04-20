@@ -79,8 +79,8 @@ public class FoodActivity extends AppCompatActivity {
         addFoodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, AddFood.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username+ " " + dayKey);
                 startActivity(intent);
-                finish();
             }
         });
     }
@@ -102,15 +102,15 @@ public class FoodActivity extends AppCompatActivity {
                     int totalProtein = 0;
                     int totalFat = 0;
                     for (DataSnapshot keySnap : keyIterator){
-                        totalCal += ((int) keySnap.child("calories").getValue());
-                        totalCarb += ((int) keySnap.child("carbs").getValue());
-                        totalProtein += ((int) keySnap.child("protein").getValue());
-                        totalFat += ((int) keySnap.child("fat").getValue());
+                        totalCal += Integer.parseInt(String.valueOf(keySnap.child("calories").getValue()));
+                        totalCarb += Integer.parseInt(String.valueOf(keySnap.child("carbs").getValue()));
+                        totalProtein += Integer.parseInt(String.valueOf(keySnap.child("protein").getValue()));
+                        totalFat += Integer.parseInt(String.valueOf(keySnap.child("fat").getValue()));
                     }
                     calTxt.setText(String.valueOf(totalCal));
                     carbTxt.setText(String.valueOf(totalCarb) + " g");
-                    proTxt.setText(String.valueOf(totalCarb) + " g");
-                    fatTxt.setText(String.valueOf(totalCarb) + " g");
+                    proTxt.setText(String.valueOf(totalProtein) + " g");
+                    fatTxt.setText(String.valueOf(totalFat) + " g");
                 }
             }
         });

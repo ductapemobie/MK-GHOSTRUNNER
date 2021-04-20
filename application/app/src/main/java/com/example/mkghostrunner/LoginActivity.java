@@ -107,8 +107,10 @@ public class LoginActivity extends AppCompatActivity {
                     else
                         if (password.equals(task.getResult().child("password").getValue())){
                             validateLogin(username);
-                        }else
+                        }else{
                             loginTxt.setText(String.valueOf("Error! Username or Password incorrect"));
+                            loginTxt.setText(String.valueOf(task.getResult().getValue()));
+                        }
                 }
             }
         });

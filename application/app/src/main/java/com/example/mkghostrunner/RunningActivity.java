@@ -17,6 +17,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class RunningActivity extends Activity implements LocationListener {
     protected LocationManager locationManager;
     TextView distTxt, timeTxt, speedTxt, speedMphTxt;
@@ -24,11 +27,21 @@ public class RunningActivity extends Activity implements LocationListener {
     float distanceTraveled;
     Location oldLoc;
     long startTime;
+    DatabaseReference mDatabase;
+    String username, dayKey;
+    Intent loginIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        loginIntent = getIntent();
+        String[] vals = loginIntent.getStringExtra(Intent.EXTRA_TEXT).split(" ");
+        username = vals[0];
+        dayKey = vals[1];
+
         oldLoc = null;
         startTime = SystemClock.uptimeMillis();
 
@@ -43,9 +56,12 @@ public class RunningActivity extends Activity implements LocationListener {
 
         finishBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                long timePassed = SystemClock.uptimeMillis() - startTime;
+                String runKey = mDatabase.child("users").child(username).child("date").child(dayKey).child("run").push().getKey();
+                RunData runData = new RunData(timePassed, distanceTraveled, runKey);
+                mDatabase.child("users").child(username).child("date").child(dayKey).child("run").child(runKey).setValue(runData);
+
                 Intent intent = new Intent();
-                String retStr = String.valueOf(distanceTraveled) + " " + String.valueOf(SystemClock.uptimeMillis() - startTime);
-                intent.putExtra(Intent.EXTRA_TEXT, retStr);
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -78,25 +94,25 @@ public class RunningActivity extends Activity implements LocationListener {
         if (oldLoc != null){
             distanceTraveled += location.distanceTo(oldLoc);
         }
-        distTxt.setText(String.valueOf(distanceTraveled));
+        distTxt.setText(String.valueOf(String.format("%.2f", distanceTraveled)));
         timeTxt.setText(String.valueOf(timePassed/1000));
-        speedTxt.setText(String.valueOf(speed));
-        speedMphTxt.setText(String.valueOf(speed/0.44704));
+        speedTxt.setText(String.valueOf(String.format("%.2f" ,speed)));
+        speedMphTxt.setText(String.valueOf(String.format("%.2f" ,speed/0.44704)));
         oldLoc = location;
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-        Log.d("Latitude","disable");
+
     }
 
     @Override
     public void onProviderEnabled(String provider) {
-        Log.d("Latitude","enable");
+
     }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-        Log.d("Latitude","status");
+
     }
 }

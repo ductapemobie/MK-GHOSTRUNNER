@@ -25,49 +25,97 @@ import java.util.UUID;
 
 public class AddFood extends AppCompatActivity {
 
-    private Button homeBtn, runBtn, foodBtn, addFoodBtn;
+    private Button addFoodBtn, cancelFoodBtn;
     EditText nameTxt, calorieTxt, carbTxt, proteinTxt, fatTxt;
-    TextView loginTxt;
+    TextView errTxt;
     Context context = this;
+    DatabaseReference mDatabase;
+    Intent loginIntent;
+    String username, dayKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food);
 
-        //mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        loginIntent = getIntent();
+        String[] vals = loginIntent.getStringExtra(Intent.EXTRA_TEXT).split(" ");
+        username = vals[0];
+        dayKey = vals[1];
+
         nameTxt = findViewById(R.id.name_input);
         calorieTxt = findViewById(R.id.calorie_input);
         carbTxt = findViewById(R.id.carb_input);
         proteinTxt = findViewById(R.id.protein_input);
         fatTxt = findViewById(R.id.fat_input);
+        errTxt = findViewById(R.id.add_food_error_msg);
 
-
-
-        homeBtn = findViewById(R.id.home_home_btn);
-        runBtn = findViewById(R.id.home_run_btn);
-        foodBtn = findViewById(R.id.home_food_btn);
         addFoodBtn = findViewById(R.id.add_food_btn);
+        cancelFoodBtn = findViewById(R.id.cancel_food_btn);
 
-
-        //navigation buttons
-
-        homeBtn.setOnClickListener(new View.OnClickListener() {
+        addFoodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(context, HomeActivity.class);
-                startActivity(intent);
+
+                if (nameTxt.getText().length() == 0) {
+                    errTxt.setText(String.valueOf("Please input a name"));
+                    return;
+                }
+                if (calorieTxt.getText().length() == 0) {
+                    errTxt.setText(String.valueOf("Please input calorie content"));
+                    return;
+                }
+                if (carbTxt.getText().length() == 0) {
+                    errTxt.setText(String.valueOf("Please input carb content"));
+                    return;
+                }
+                if (proteinTxt.getText().length() == 0) {
+                    errTxt.setText(String.valueOf("Please input protein content"));
+                    return;
+                }
+                if (fatTxt.getText().length() == 0) {
+                    errTxt.setText(String.valueOf("Please input fat content"));
+                    return;
+                }
+
+                int calories, carbs, protein, fat;
+
+                String foodName = String.valueOf(nameTxt.getText());
+                try{
+                    calories = Integer.parseInt(String.valueOf(calorieTxt.getText()));
+                }catch(Exception  e){
+                    errTxt.setText(String.valueOf("Please input a number for calories"));
+                    return;
+                }
+                try{
+                    carbs = Integer.parseInt(String.valueOf(carbTxt.getText()));
+                }catch(Exception  e){
+                    errTxt.setText(String.valueOf("Please input a number for carbs"));
+                    return;
+                }
+                try{
+                    protein = Integer.parseInt(String.valueOf(proteinTxt.getText()));
+                }catch(Exception  e){
+                    errTxt.setText(String.valueOf("Please input a number for protein"));
+                    return;
+                }
+                try{
+                    fat = Integer.parseInt(String.valueOf(fatTxt.getText()));
+                }catch(Exception  e){
+                    errTxt.setText(String.valueOf("Please input a number for fat"));
+                    return;
+                }
+
+                String foodKey = mDatabase.child("users").child(username).child("date").child(dayKey).child("run").push().getKey();
+                FoodData foodData = new FoodData(calories, carbs, protein, fat, foodName, foodKey);
+                mDatabase.child("users").child(username).child("date").child(dayKey).child("food").child(foodKey).setValue(foodData);
+
                 finish();
             }
         });
-        runBtn.setOnClickListener(new View.OnClickListener() {
+
+        cancelFoodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //do nothing we are already here
-            }
-        });
-        foodBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(context, FoodActivity.class);
-                startActivity(intent);
                 finish();
             }
         });

@@ -28,7 +28,7 @@
     <!-- Strings related to running activity -->
     <string name="running_title">Run Started!</string>
     <string name="running_dist">Meters Traveled:</string>
-    <string name="running_time">Time Elapsed:</string>
+    <string name="running_time">Time Elapsed (seconds):</string>
     <string name="running_speed">Average Speed (m/s):</string>
     <string name="running_speed_mph">Average Speed (mph):</string>
     <string name="running_dist_val">[VALUE]</string>
@@ -50,6 +50,7 @@
     <string name="food_new_btn">Add New Food</string>
     <string name="food_options">Options</string>
     <string name="food_view_btn">View Today\'s Food</string>
+
     <!-- Strings related to add food -->
     <string name="title_add_food">Add Food</string>
     <string name="add_food_name">Food Name</string>
@@ -58,6 +59,7 @@
     <string name="add_food_protein_amount">Protein Amount</string>
     <string name="add_food_fat_amount">Total Fat Amount</string>
     <string name="add_food_add_food">Add This Food</string>
+    <string name="add_food_cancel">Cancel</string>
 
     <!-- Strings related to login -->
     <string name="login_username">Username</string>
@@ -65,4 +67,6 @@
     <string name="login_register">Register</string>
     <string name="login_login">Log In</string>
     <string name="login_taken">Username Already Taken</string>
+
+    <string name="title_activity_add_food">Add Food</string>
 </resources>

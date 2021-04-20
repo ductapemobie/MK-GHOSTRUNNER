@@ -127,7 +127,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void updateVals(){
-        dateTxt.setText(String.valueOf(dayData.getDay()));
+        dateTxt.setText("Today's date: " + String.valueOf(dayData.getDay()));
         //have username and dayKey
         mDatabase.child("users").child(username).child("date").child(dayKey).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -137,15 +137,18 @@ public class HomeActivity extends AppCompatActivity {
                     distTxt.setText(String.valueOf("Error! Check your internet connection."));
                     calTxt.setText(String.valueOf("Error! Check your internet connection."));
                 } else {
-                    Iterable<DataSnapshot> keyIterator = task.getResult().child("food").getChildren();
+                    calTxt.setText(String.valueOf(task.getResult().getValue()));
+                    Iterable<DataSnapshot> keyIterator;
                     int totalCals = 0;
+                    float totalDist = 0;
+                    keyIterator = task.getResult().child("food").getChildren();
                     for (DataSnapshot keySnap : keyIterator){
-                           totalCals+= ((Integer) keySnap.child("calories").getValue());
+                           totalCals+= 3;//Integer.parseInt(String.valueOf(keySnap.child("calories").getValue()));
                     }
                     keyIterator = task.getResult().child("run").getChildren();
-                    float totalDist = 0;
                     for (DataSnapshot keySnap : keyIterator){
-                        totalDist += ((float) keySnap.child("dist").getValue());
+                        userTxt.setText(String.valueOf(Float.parseFloat(String.valueOf(keySnap.child("dist").getValue()))));
+                        totalDist +=  Float.parseFloat(String.valueOf(keySnap.child("dist").getValue()));
                     }
                     calTxt.setText(String.valueOf(totalCals) + " calories");
                     distTxt.setText(String.valueOf(totalDist) + " meters");

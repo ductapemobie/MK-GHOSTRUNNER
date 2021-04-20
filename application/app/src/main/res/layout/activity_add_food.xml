@@ -104,27 +104,16 @@
                 android:text="@string/add_food_add_food" />
         </TableRow>
 
-
-    </TableLayout>
-
-    <TableLayout
-        android:gravity="bottom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow android:gravity="center">
+        <TableRow>
             <Button
-                style="?android:attr/buttonBarButtonStyle"
-                android:id="@+id/home_home_btn"
-                android:text="@string/title_home" />
-            <Button
-                style="?android:attr/buttonBarButtonStyle"
-                android:id="@+id/home_run_btn"
-                android:text="@string/title_run" />
-            <Button
-                style="?android:attr/buttonBarButtonStyle"
-                android:id="@+id/home_food_btn"
-                android:text="@string/title_food" />
+                android:id="@+id/cancel_food_btn"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_span="2"
+                android:text="@string/add_food_cancel"/>
         </TableRow>
+
     </TableLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -51,7 +51,8 @@ public class RunActivity extends AppCompatActivity {
         startRunBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(context, RunningActivity.class);
-                startActivityForResult(intent, RUNNING_ACTIVITY_REQUEST_CODE);
+                intent.putExtra(Intent.EXTRA_TEXT, username + " " + dayKey);
+                startActivity(intent);
             }
         });
 
@@ -84,7 +85,7 @@ public class RunActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-        updateVals();
+        //updateVals();
     }
 
     private void updateVals(){
@@ -102,8 +103,8 @@ public class RunActivity extends AppCompatActivity {
                     float totalDist = 0;
                     long totalTime = 0;
                     for (DataSnapshot keySnap : keyIterator){
-                        totalDist += ((float) keySnap.child("dist").getValue());
-                        totalTime += ((long) keySnap.child("time").getValue());
+                        totalDist += Float.parseFloat(String.valueOf(keySnap.child("dist").getValue()));
+                        totalTime += Long.parseLong(String.valueOf(keySnap.child("time").getValue()));
                     }
                     float speed;
 
@@ -112,10 +113,10 @@ public class RunActivity extends AppCompatActivity {
                     }else{
                         speed = 0;
                     }
-                    distTxt.setText(String.valueOf(totalDist) + " meters");
-                    timeTxt.setText(String.valueOf(totalTime/ 60.0) + " minutes");
-                    speedTxt.setText(String.valueOf(speed) + "m/s");
-                    speedMphTxt.setText(String.valueOf(speed / 0.44704) + "mph");
+                    distTxt.setText(String.valueOf(String.format("%.2f" ,totalDist)) + " meters");
+                    timeTxt.setText(String.valueOf(String.format("%.2f" ,(totalTime/ (1000*60.0)))) + " minutes");
+                    speedTxt.setText(String.valueOf(String.format("%.2f" ,speed)) + " m/s");
+                    speedMphTxt.setText(String.valueOf(String.format("%.2f" ,(speed / 0.44704))) + " mph");
                 }
             }
         });
