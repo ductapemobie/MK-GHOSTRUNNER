@@ -12,7 +12,7 @@ public class FoodActivity extends AppCompatActivity {
 
     Context context = this;
     Button homeBtn, runBtn, foodBtn;
-    String username;
+    String username, dayKey;
     Intent loginIntent;
 
 
@@ -26,7 +26,9 @@ public class FoodActivity extends AppCompatActivity {
         foodBtn = findViewById(R.id.home_food_btn);
 
         loginIntent = getIntent();
-        username = loginIntent.getStringExtra(Intent.EXTRA_TEXT);
+        String[] vals = loginIntent.getStringExtra(Intent.EXTRA_TEXT).split(" ");
+        username = vals[0];
+        dayKey = vals[1];
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -39,7 +41,7 @@ public class FoodActivity extends AppCompatActivity {
         runBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, RunActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, username);
+                intent.putExtra(Intent.EXTRA_TEXT, username+ " " + dayKey);
                 startActivity(intent);
                 finish();
             }

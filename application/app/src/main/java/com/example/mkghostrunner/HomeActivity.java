@@ -22,13 +22,14 @@ import java.time.LocalDate;
 
 public class HomeActivity extends AppCompatActivity {
 
-    TextView userTxt, distTxt, calTxt;
+    TextView userTxt, distTxt, calTxt, dateTxt;
     Button dateBtn, logoutBtn, homeBtn, runBtn, foodBtn;
     Intent loginIntent;
-    String username;
+    String username, dayKey;
     DayData dayData;
     DatabaseReference mDatabase;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         loginIntent = getIntent();
         username = loginIntent.getStringExtra(Intent.EXTRA_TEXT);
 
+        dateTxt = findViewById(R.id.home_daily_values_title);
         userTxt = findViewById(R.id.home_welcome_user);
         distTxt = findViewById(R.id.home_daily_dist_val);
         calTxt = findViewById(R.id.home_daily_cal_val);
@@ -51,7 +53,9 @@ public class HomeActivity extends AppCompatActivity {
 
         userTxt.setText(username);
 
-        /*mDatabase.child("users").child(username).child("date").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        //mDatabase.child("users").child(username).child("date").getChil
+
+        mDatabase.child("users").child(username).child("date").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -60,17 +64,32 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 else {
                     if (task.getResult().getValue()==null) {
-                        String key = mDatabase.child("users").child(username).child("date").push().getKey();
-                        dayData = new DayData(LocalDate.now(), key);
-                        mDatabase.child("users").child(username).child("date").child(key).child("date").setValue(dayData.getDay().toString());
-                        distTxt.setText(String.valueOf(task.getResult().getValue()));
+                        dayKey = mDatabase.child("users").child(username).child("date").push().getKey();
+                        dayData = new DayData(LocalDate.now(), dayKey);
+                        mDatabase.child("users").child(username).child("date").child(dayKey).child("date").setValue(dayData.getDay().toString());
+                        updateVals();
                     }
                     else {
-                        distTxt.setText(String.valueOf(task.getResult().getValue()));
+                        Iterable<DataSnapshot> keyIterator = task.getResult().getChildren();
+                        for (DataSnapshot keySnap : keyIterator){
+                            if (LocalDate.now().toString().equals(String.valueOf(keySnap.child("date").getValue()))){
+                                dayKey = keySnap.getKey();
+                                dayData = new DayData(LocalDate.now(), dayKey);
+                                updateVals();
+                                return;
+                            }
+                        }
+                        //date not found
+                        dayKey = mDatabase.child("users").child(username).child("date").push().getKey();
+                        dayData = new DayData(LocalDate.now(), dayKey);
+                        mDatabase.child("users").child(username).child("date").child(dayKey).child("date").setValue(dayData.getDay().toString());
+                        updateVals();
                     }
                 }
             }
-        });*/
+        });
+
+
 
         dateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -92,7 +111,7 @@ public class HomeActivity extends AppCompatActivity {
         runBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, RunActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, username);
+                intent.putExtra(Intent.EXTRA_TEXT, username + " " + dayKey);
                 startActivity(intent);
                 finish();
             }
@@ -100,12 +119,39 @@ public class HomeActivity extends AppCompatActivity {
         foodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, FoodActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, username);
+                intent.putExtra(Intent.EXTRA_TEXT, username + " " + dayKey);
                 startActivity(intent);
                 finish();
             }
         });
     }
 
+    private void updateVals(){
+        dateTxt.setText(String.valueOf(dayData.getDay()));
+        //have username and dayKey
+        mDatabase.child("users").child(username).child("date").child(dayKey).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    distTxt.setText(String.valueOf("Error! Check your internet connection."));
+                    calTxt.setText(String.valueOf("Error! Check your internet connection."));
+                } else {
+                    Iterable<DataSnapshot> keyIterator = task.getResult().child("food").getChildren();
+                    int totalCals = 0;
+                    for (DataSnapshot keySnap : keyIterator){
+                           totalCals+= ((Integer) keySnap.child("calories").getValue());
+                    }
+                    keyIterator = task.getResult().child("run").getChildren();
+                    float totalDist = 0;
+                    for (DataSnapshot keySnap : keyIterator){
+                        totalDist += ((float) keySnap.child("dist").getValue());
+                    }
+                    calTxt.setText(String.valueOf(totalCals) + " calories");
+                    distTxt.setText(String.valueOf(totalDist) + " meters");
+                }
+            }
+        });
+    }
 
 }
