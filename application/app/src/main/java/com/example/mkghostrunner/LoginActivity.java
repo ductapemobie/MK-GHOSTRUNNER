@@ -10,21 +10,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.mkghostrunner.ui.dashboard.RunFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.lang.reflect.Array;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,6 +37,11 @@ public class LoginActivity extends AppCompatActivity {
     public void register_click(View v){
         String username = userTxt.getText().toString();
         String password = passTxt.getText().toString();
+
+        if (username.equals("RESET")){//debugging MUST REMOVE LATER
+            mDatabase.child("users").setValue(null);
+            return;
+        }
 
         if (username.isEmpty()){
             loginTxt.setText(String.valueOf("Please input a username"));
@@ -76,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void register_user(String username, String password){
+        loginTxt.setText("");
         UserData newUser = new UserData(username, password);
 
         mDatabase.child("users").child(username).setValue(newUser);
@@ -119,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validateLogin(String username){
+        loginTxt.setText("");
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra(Intent.EXTRA_TEXT, username);
         startActivity(intent);

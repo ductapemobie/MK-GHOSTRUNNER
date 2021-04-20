@@ -14,6 +14,8 @@ public class RunActivity extends AppCompatActivity {
     private Context context = this;
     private Button startRunBtn, homeBtn, runBtn, foodBtn;
     private TextView distTxt;
+    String username;
+    Intent loginIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,10 @@ public class RunActivity extends AppCompatActivity {
         foodBtn = findViewById(R.id.home_food_btn);
         distTxt = findViewById(R.id.run_dist_val);
 
+        loginIntent = getIntent();
+        username = loginIntent.getStringExtra(Intent.EXTRA_TEXT);
+
+        startRunBtn.setText(username);
 
         startRunBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -39,6 +45,7 @@ public class RunActivity extends AppCompatActivity {
         homeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, HomeActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username);
                 startActivity(intent);
                 finish();
             }
@@ -51,6 +58,7 @@ public class RunActivity extends AppCompatActivity {
         foodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, FoodActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username);
                 startActivity(intent);
                 finish();
             }

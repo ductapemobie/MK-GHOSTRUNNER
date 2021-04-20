@@ -1,10 +1,12 @@
 package com.example.mkghostrunner;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,12 +18,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.LocalDate;
+
 public class HomeActivity extends AppCompatActivity {
 
     TextView userTxt, distTxt, calTxt;
     Button dateBtn, logoutBtn, homeBtn, runBtn, foodBtn;
     Intent loginIntent;
     String username;
+    DayData dayData;
     DatabaseReference mDatabase;
 
     @Override
@@ -31,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         Context context = this;
+
         loginIntent = getIntent();
         username = loginIntent.getStringExtra(Intent.EXTRA_TEXT);
 
@@ -45,20 +51,26 @@ public class HomeActivity extends AppCompatActivity {
 
         userTxt.setText(username);
 
-        mDatabase.child("users").child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        /*mDatabase.child("users").child(username).child("date").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     distTxt.setText(String.valueOf("Error! Check your internet connection."));
                 }
                 else {
-                    if (task.getResult().getValue()==null)
+                    if (task.getResult().getValue()==null) {
+                        String key = mDatabase.child("users").child(username).child("date").push().getKey();
+                        dayData = new DayData(LocalDate.now(), key);
+                        mDatabase.child("users").child(username).child("date").child(key).child("date").setValue(dayData.getDay().toString());
                         distTxt.setText(String.valueOf(task.getResult().getValue()));
-                    else
+                    }
+                    else {
                         distTxt.setText(String.valueOf(task.getResult().getValue()));
+                    }
                 }
             }
-        });
+        });*/
 
         dateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -80,6 +92,7 @@ public class HomeActivity extends AppCompatActivity {
         runBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, RunActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username);
                 startActivity(intent);
                 finish();
             }
@@ -87,6 +100,7 @@ public class HomeActivity extends AppCompatActivity {
         foodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, FoodActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username);
                 startActivity(intent);
                 finish();
             }
