@@ -21,13 +21,13 @@ public class ViewDayActivity extends AppCompatActivity {
 
         homeBtn = findViewById(R.id.return_home_btn);
         foodBtn = findViewById(R.id.view_food_btn);
-        date = findViewById(R.id.view_day_date);
-        dist = findViewById(R.id.view_day_dist_ran);
-        time = findViewById(R.id.view_day_time_ran);
-        cals = findViewById(R.id.view_day_calories);
-        carbs = findViewById(R.id.view_day_carbs);
-        protein = findViewById(R.id.view_day_protein);
-        fat = findViewById(R.id.view_day_fat);
+        date = findViewById(R.id.day_date);
+        dist = findViewById(R.id.day_dist_ran);
+        time = findViewById(R.id.day_time_ran);
+        cals = findViewById(R.id.day_calories);
+        carbs = findViewById(R.id.day_carbs);
+        protein = findViewById(R.id.day_protein);
+        fat = findViewById(R.id.day_fat);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
