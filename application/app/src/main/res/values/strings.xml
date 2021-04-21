@@ -68,7 +68,7 @@
     <string name="login_taken">Username Already Taken</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_add_food">AddFood</string>
+    <string name="title_activity_add_food">Add Food</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -78,11 +78,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-<<<<<<< HEAD
-    <string name="title_activity_add_food">Add Food</string>
     <string name="date_pick">Select Day</string>
     <string name="date_title">Selcet Day</string>
-=======
     <!-- String related to view day activity -->
     <string name="day_date">[VALUE]</string>
     <string name="day_dist_ran">[VALUE]</string>

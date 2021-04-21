@@ -110,7 +110,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:layout_span="2"
-                android:text="@string/add_food_cancel"/>
+                android:text="Cancel"/>
         </TableRow>
 
     </TableLayout>
