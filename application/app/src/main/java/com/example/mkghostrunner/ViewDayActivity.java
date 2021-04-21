@@ -38,6 +38,10 @@ public class ViewDayActivity extends AppCompatActivity {
         dayKey = vals[1];
 
         homeBtn = findViewById(R.id.return_home_btn);
+<<<<<<< HEAD
+=======
+        foodBtn = findViewById(R.id.view_food_btn);
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
         date = findViewById(R.id.day_date);
         dist = findViewById(R.id.day_dist_ran);
         time = findViewById(R.id.day_time_ran);

@@ -33,7 +33,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text="@string/day_date" />
         </TableRow>
 
         <TableRow>
@@ -50,7 +50,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text="@string/day_dist_ran" />
         </TableRow>
 
         <TableRow>
@@ -67,7 +67,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text="@string/day_time_ran" />
         </TableRow>
 
         <TableRow>
@@ -84,7 +84,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text="@string/day_calories" />
         </TableRow>
 
         <TableRow>
@@ -101,7 +101,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text= "@string/day_carbs" />
         </TableRow>
 
         <TableRow>
@@ -118,7 +118,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text= "@string/day_protein" />
         </TableRow>
 
         <TableRow>
@@ -135,7 +135,7 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
-                android:text="@string/run_time_val" />
+                android:text= "@string/day_fat"/>
         </TableRow>
 
         <TableRow>

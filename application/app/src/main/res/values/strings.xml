@@ -28,7 +28,7 @@
     <!-- Strings related to running activity -->
     <string name="running_title">Run Started!</string>
     <string name="running_dist">Meters Traveled:</string>
-    <string name="running_time">Time Elapsed (seconds):</string>
+    <string name="running_time">Time Elapsed:</string>
     <string name="running_speed">Average Speed (m/s):</string>
     <string name="running_speed_mph">Average Speed (mph):</string>
     <string name="running_dist_val">[VALUE]</string>
@@ -38,6 +38,7 @@
     <string name="running_btn">Finish Run</string>
     <string name="running_cancel_btn">Cancel Run</string>
     <!-- Strings related to food fragment -->
+    <string name="food_name">[VALUE]</string>
     <string name="food_daily_totals">Daily Totals</string>
     <string name="food_cal">Calories:</string>
     <string name="food_cal_val">[VALUE]</string>
@@ -50,7 +51,6 @@
     <string name="food_new_btn">Add New Food</string>
     <string name="food_options">Options</string>
     <string name="food_view_btn">View Today\'s Food</string>
-
     <!-- Strings related to add food -->
     <string name="title_add_food">Add Food</string>
     <string name="add_food_name">Food Name</string>
@@ -59,7 +59,6 @@
     <string name="add_food_protein_amount">Protein Amount</string>
     <string name="add_food_fat_amount">Total Fat Amount</string>
     <string name="add_food_add_food">Add This Food</string>
-    <string name="add_food_cancel">Cancel</string>
 
     <!-- Strings related to login -->
     <string name="login_username">Username</string>
@@ -67,8 +66,30 @@
     <string name="login_register">Register</string>
     <string name="login_login">Log In</string>
     <string name="login_taken">Username Already Taken</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_food">AddFood</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+<<<<<<< HEAD
     <string name="title_activity_add_food">Add Food</string>
     <string name="date_pick">Select Day</string>
     <string name="date_title">Selcet Day</string>
+=======
+    <!-- String related to view day activity -->
+    <string name="day_date">[VALUE]</string>
+    <string name="day_dist_ran">[VALUE]</string>
+    <string name="day_time_ran">[VALUE]</string>
+    <string name="day_calories">[VALUE]</string>
+    <string name="day_carbs">[VALUE]</string>
+    <string name="day_protein">[VALUE]</string>
+    <string name="day_fat">[VALUE]</string>
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
 </resources>

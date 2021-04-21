@@ -6,8 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ViewFoodActivity">
 
+<<<<<<< HEAD
     <!-- made by Lucas, github just didn't pull this for whatever reason -->
 
+=======
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
     <TableLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -35,7 +38,11 @@
                 android:paddingEnd="0dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="0dp"
+<<<<<<< HEAD
                 android:text="2021-04-20" />
+=======
+                android:text="@string/day_date" />
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
         </TableRow>
 
         <TableRow>
@@ -129,7 +136,11 @@
                         android:paddingLeft="20dp"
                         android:paddingEnd="0dp"
                         android:paddingRight="0dp"
+<<<<<<< HEAD
                         android:text="3 g"
+=======
+                        android:text="2.5 g"
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
                         android:textSize="16sp" />
                 </TableRow>
 
@@ -148,7 +159,11 @@
                         android:paddingLeft="20dp"
                         android:paddingEnd="0dp"
                         android:paddingRight="0dp"
+<<<<<<< HEAD
                         android:text="2 g"
+=======
+                        android:text="1.75 g"
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
                         android:textSize="16sp" />
                 </TableRow>
 
@@ -446,7 +461,11 @@
                         android:paddingLeft="20dp"
                         android:paddingEnd="0dp"
                         android:paddingRight="0dp"
+<<<<<<< HEAD
                         android:text="5 g"
+=======
+                        android:text="4.5 g"
+>>>>>>> 90dc567cb0663aab1f57f08064289feb36485a06
                         android:textSize="16sp" />
                 </TableRow>
 
