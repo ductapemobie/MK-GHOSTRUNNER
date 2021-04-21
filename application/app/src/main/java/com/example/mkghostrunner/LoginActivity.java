@@ -109,7 +109,6 @@ public class LoginActivity extends AppCompatActivity {
                             validateLogin(username);
                         }else{
                             loginTxt.setText(String.valueOf("Error! Username or Password incorrect"));
-                            loginTxt.setText(String.valueOf(task.getResult().getValue()));
                         }
                 }
             }

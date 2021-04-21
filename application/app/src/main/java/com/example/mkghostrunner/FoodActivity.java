@@ -25,7 +25,7 @@ public class FoodActivity extends AppCompatActivity {
     String username, dayKey;
     Intent loginIntent;
     DatabaseReference mDatabase;
-    Button homeBtn, runBtn, foodBtn, addFoodBtn;
+    Button homeBtn, runBtn, foodBtn, addFoodBtn, viewFoodBtn;
 
 
 
@@ -39,6 +39,7 @@ public class FoodActivity extends AppCompatActivity {
         runBtn = findViewById(R.id.home_run_btn);
         foodBtn = findViewById(R.id.home_food_btn);
         addFoodBtn = findViewById(R.id.food_new_btn);
+        viewFoodBtn = findViewById(R.id.food_view_btn);
 
 
         calTxt = findViewById(R.id.food_cal_val);
@@ -79,6 +80,18 @@ public class FoodActivity extends AppCompatActivity {
         addFoodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, AddFood.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username+ " " + dayKey);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        viewFoodBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                /*
+                 *   DID NOT IMPLEMENT THIS, JUST A PLACEHOLDER EXAMPLE OF WHAT VIEW FOOD WOULD LOOK LIKE
+                 * */
+                Intent intent = new Intent(context, ViewFoodActivity.class);
                 intent.putExtra(Intent.EXTRA_TEXT, username+ " " + dayKey);
                 startActivity(intent);
             }

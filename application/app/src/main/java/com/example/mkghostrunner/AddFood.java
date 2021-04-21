@@ -110,6 +110,9 @@ public class AddFood extends AppCompatActivity {
                 FoodData foodData = new FoodData(calories, carbs, protein, fat, foodName, foodKey);
                 mDatabase.child("users").child(username).child("date").child(dayKey).child("food").child(foodKey).setValue(foodData);
 
+                Intent intent = new Intent(context, FoodActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username+ " " + dayKey);
+                startActivity(intent);
                 finish();
             }
         });

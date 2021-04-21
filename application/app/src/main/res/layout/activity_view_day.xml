@@ -155,10 +155,10 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_span="2"
                 android:gravity="center_horizontal"
-                android:text= "Return Home" />
+                android:text= "Return" />
         </TableRow>
 
-        <TableRow>
+        <!-- TableRow>
 
             <Button
                 android:id="@+id/view_food_btn"
@@ -166,7 +166,7 @@
                 android:layout_span="2"
                 android:gravity="center_horizontal"
                 android:text="View Food" />
-        </TableRow>
+        </TableRow -->
 
 
     </TableLayout>

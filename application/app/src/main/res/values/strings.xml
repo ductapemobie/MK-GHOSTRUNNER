@@ -69,4 +69,6 @@
     <string name="login_taken">Username Already Taken</string>
 
     <string name="title_activity_add_food">Add Food</string>
+    <string name="date_pick">Select Day</string>
+    <string name="date_title">Selcet Day</string>
 </resources>

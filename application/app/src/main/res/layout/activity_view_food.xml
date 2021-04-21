@@ -6,4 +6,484 @@
     android:layout_height="match_parent"
     tools:context=".ViewFoodActivity">
 
+    <!-- made by Lucas, github just didn't pull this for whatever reason -->
+
+    <TableLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:id="@+id/view_food_title"
+                android:gravity="center_horizontal"
+                android:layout_span="2"
+                android:textSize="30sp"
+                android:text="View Food"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/view_food_date"
+                android:textSize="16sp"
+                android:text="Date:"/>
+            <TextView
+                android:id="@+id/day_date"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:text="2021-04-20" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/space"
+                android:textSize="16sp"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:text=""/>
+        </TableRow>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="604dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_name1"
+                        android:text="Name:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="Cereal"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_calories1"
+                        android:text="Calories:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/calories1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="175"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_carbs1"
+                        android:text="Carbs:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/carbs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="27 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_protein1"
+                        android:text="Protein:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/protein1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="3 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_fat1"
+                        android:text="Fat:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/fat1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="2 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/space_2"
+                        android:layout_gravity="center"
+                        android:layout_span="2"
+                        android:gravity="center_horizontal"
+                        android:text=""
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_name2"
+                        android:text="Name:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="Banana"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_calories2"
+                        android:text="Calories:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/calories2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="110"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_carbs2"
+                        android:text="Carbs:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/carbs2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="28 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_protein2"
+                        android:text="Protein:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/protein2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="1 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_fat2"
+                        android:text="Fat:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/fat2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="0 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/space_3"
+                        android:layout_gravity="center"
+                        android:layout_span="2"
+                        android:gravity="center_horizontal"
+                        android:text=""
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_name3"
+                        android:text="Name:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="Chicken Sandwich"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_calories3"
+                        android:text="Calories:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/calories3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="520"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_carbs3"
+                        android:text="Carbs:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/carbs3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="40 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_protein3"
+                        android:text="Protein:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/protein3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="29 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_fat3"
+                        android:text="Fat:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/fat3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="7 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/space_4"
+                        android:textSize="16sp"
+                        android:layout_span="2"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center"
+                        android:text=""/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_name4"
+                        android:text="Name:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="Ice Cream"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_calories4"
+                        android:text="Calories:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/calories4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="274"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_carbs4"
+                        android:text="Carbs:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/carbs4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="31 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_protein4"
+                        android:text="Protein:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/protein4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="5 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/view_food_fat4"
+                        android:text="Fat:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/fat4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:text="15 g"
+                        android:textSize="16sp" />
+                </TableRow>
+
+            </TableLayout>
+
+        </ScrollView>
+
+        <TableRow android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/return_btn"
+                android:layout_gravity="center_horizontal"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:text="Return" />
+        </TableRow>
+
+
+    </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

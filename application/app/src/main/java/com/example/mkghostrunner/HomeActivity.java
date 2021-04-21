@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.LocalDate;
+import java.util.Calendar;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -52,8 +54,6 @@ public class HomeActivity extends AppCompatActivity {
         foodBtn = findViewById(R.id.home_food_btn);
 
         userTxt.setText(username);
-
-        //mDatabase.child("users").child(username).child("date").getChil
 
         mDatabase.child("users").child(username).child("date").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -93,7 +93,9 @@ public class HomeActivity extends AppCompatActivity {
 
         dateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //TODO figure out the date stuff
+                Intent intent = new Intent(context, DateSelectionActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, username + " " + dayKey);
+                startActivity(intent);
             }
         });
 
@@ -143,15 +145,14 @@ public class HomeActivity extends AppCompatActivity {
                     float totalDist = 0;
                     keyIterator = task.getResult().child("food").getChildren();
                     for (DataSnapshot keySnap : keyIterator){
-                           totalCals+= 3;//Integer.parseInt(String.valueOf(keySnap.child("calories").getValue()));
+                        totalCals += Integer.parseInt(String.valueOf(keySnap.child("calories").getValue()));
                     }
                     keyIterator = task.getResult().child("run").getChildren();
                     for (DataSnapshot keySnap : keyIterator){
-                        userTxt.setText(String.valueOf(Float.parseFloat(String.valueOf(keySnap.child("dist").getValue()))));
                         totalDist +=  Float.parseFloat(String.valueOf(keySnap.child("dist").getValue()));
                     }
                     calTxt.setText(String.valueOf(totalCals) + " calories");
-                    distTxt.setText(String.valueOf(totalDist) + " meters");
+                    distTxt.setText(String.valueOf(String.format("%.2f", totalDist)) + " meters");
                 }
             }
         });
